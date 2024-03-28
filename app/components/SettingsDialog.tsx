@@ -1,8 +1,9 @@
-import useTheme from "../hooks/useTheme";
+import { useContext } from "react";
 import ThemeSelector from "./ThemeSelector";
+import { ThemeContext } from "./Providers";
 
 export default function SettingsDialog() {
-  const { theme, setTheme, themes } = useTheme();
+  const { theme, setTheme, themes } = useContext(ThemeContext);
   return (
     <dialog id="settings" className="modal">
       <div className="modal-box min-h-96 w-11/12 max-w-1xl">

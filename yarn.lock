@@ -79,6 +79,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ffmpeg/ffmpeg@npm:^0.11.6":
+  version: 0.11.6
+  resolution: "@ffmpeg/ffmpeg@npm:0.11.6"
+  dependencies:
+    is-url: "npm:^1.2.4"
+    node-fetch: "npm:^2.6.1"
+    regenerator-runtime: "npm:^0.13.7"
+    resolve-url: "npm:^0.2.1"
+  checksum: 10c0/7692b4b14369f81ff2833e93767a202872991ead75eee0490f55668d3b6d1911495bd08879cbb23b4781e8c492a75316eb3c2fde7066cc093235bef4649096d4
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.14":
   version: 0.11.14
   resolution: "@humanwhocodes/config-array@npm:0.11.14"
@@ -2725,6 +2737,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"is-url@npm:^1.2.4":
+  version: 1.2.4
+  resolution: "is-url@npm:1.2.4"
+  checksum: 10c0/0157a79874f8f95fdd63540e3f38c8583c2ef572661cd0693cda80ae3e42dfe8e9a4a972ec1b827f861d9a9acf75b37f7d58a37f94a8a053259642912c252bc3
+  languageName: node
+  linkType: hard
+
 "is-weakmap@npm:^2.0.2":
   version: 2.0.2
   resolution: "is-weakmap@npm:2.0.2"
@@ -2944,6 +2963,7 @@ __metadata:
     prisma: "npm:^5.11.0"
     prompt-engine: "npm:^0.0.31"
     react: "npm:^18"
+    react-audio-voice-recorder: "npm:^2.2.0"
     react-dom: "npm:^18"
     react-leaflet: "npm:^4.2.1"
     tailwindcss: "npm:^3.3.0"
@@ -3361,7 +3381,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.6.7":
+"node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.7":
   version: 2.7.0
   resolution: "node-fetch@npm:2.7.0"
   dependencies:
@@ -3892,6 +3912,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-audio-visualize@npm:^1.1.3":
+  version: 1.1.3
+  resolution: "react-audio-visualize@npm:1.1.3"
+  peerDependencies:
+    react: ">=16.2.0"
+    react-dom: ">=16.2.0"
+  checksum: 10c0/48d1239981e94b6d6f40cd9c3c9edd2d8daac176c7aa32791daccf8aaa8398545c85f0bdda21661c1dab8c0b39c2e12a3c3cc1438130e857a7b1daa363166c81
+  languageName: node
+  linkType: hard
+
+"react-audio-voice-recorder@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "react-audio-voice-recorder@npm:2.2.0"
+  dependencies:
+    "@ffmpeg/ffmpeg": "npm:^0.11.6"
+    react-audio-visualize: "npm:^1.1.3"
+  peerDependencies:
+    react: ">=16.2.0"
+    react-dom: ">=16.2.0"
+  checksum: 10c0/07a3637a7806940718fcffca9ecfa41d2b85d6cc5f25bcbddc8a8a924e4be05e2497d5b070876ba459ac6738d6e427f85489e847ea82008f32382ba06218849c
+  languageName: node
+  linkType: hard
+
 "react-dom@npm:^18":
   version: 18.2.0
   resolution: "react-dom@npm:18.2.0"
@@ -3966,6 +4009,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"regenerator-runtime@npm:^0.13.7":
+  version: 0.13.11
+  resolution: "regenerator-runtime@npm:0.13.11"
+  checksum: 10c0/12b069dc774001fbb0014f6a28f11c09ebfe3c0d984d88c9bced77fdb6fedbacbca434d24da9ae9371bfbf23f754869307fb51a4c98a8b8b18e5ef748677ca24
+  languageName: node
+  linkType: hard
+
 "regenerator-runtime@npm:^0.14.0":
   version: 0.14.1
   resolution: "regenerator-runtime@npm:0.14.1"
@@ -4003,6 +4053,13 @@ __metadata:
   version: 1.0.0
   resolution: "resolve-pkg-maps@npm:1.0.0"
   checksum: 10c0/fb8f7bbe2ca281a73b7ef423a1cbc786fb244bd7a95cbe5c3fba25b27d327150beca8ba02f622baea65919a57e061eb5005204daa5f93ed590d9b77463a567ab
+  languageName: node
+  linkType: hard
+
+"resolve-url@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "resolve-url@npm:0.2.1"
+  checksum: 10c0/c285182cfcddea13a12af92129ce0569be27fb0074ffaefbd3ba3da2eac2acecdfc996d435c4982a9fa2b4708640e52837c9153a5ab9255886a00b0b9e8d2a54
   languageName: node
   linkType: hard
 

@@ -2,6 +2,15 @@
 import { useState, useRef, useCallback } from "react";
 import { createMediaStream } from "@/app/utils/createMediaStream";
 
+export function resolveMimeType() {
+  const MEDIA_TYPES = ["audio/webm", "audio/mp3", "audio/mp4"];
+
+  const supportedTypes = MEDIA_TYPES.filter((type) =>
+    MediaRecorder.isTypeSupported(type),
+  );
+  return supportedTypes.length > 0 ? supportedTypes[0] : MEDIA_TYPES[0];
+}
+
 function useRecordVoice() {
   const [audio, setAudio] = useState(undefined as Blob | undefined);
   const [recording, setRecording] = useState(false);
@@ -59,12 +68,7 @@ function useRecordVoice() {
   const initializeMediaRecorder = (stream: MediaStream) => {
     console.log(`Initializing media recorder...`);
 
-    const MEDIA_TYPES = ["audio/webm", "audio/mp3", "audio/mp4"];
-
-    const supportedTypes = MEDIA_TYPES.filter((type) =>
-      MediaRecorder.isTypeSupported(type),
-    );
-    const mimeType = supportedTypes.length > 0 ? supportedTypes[0] : undefined;
+    const mimeType = resolveMimeType();
 
     console.log(`Using mime type: ${mimeType}`);
 

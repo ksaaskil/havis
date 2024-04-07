@@ -49,7 +49,7 @@ export default async function handler(
     return;
   }
 
-  const extension = mimeType?.split("/")[1] || "webm";
+  const extension = mimeType?.split("/")[1]?.split(";")[0] || "webm";
 
   const filePath = path.join(os.tmpdir(), `kurppa-input.${extension}`);
 

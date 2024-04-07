@@ -1,6 +1,7 @@
 "use client";
+import { useAudioRecorder } from "react-audio-voice-recorder";
 import dynamic from "next/dynamic";
-import { useRecordVoice } from "@/app/hooks/useRecordVoice";
+import { resolveMimeType, useRecordVoice } from "@/app/hooks/useRecordVoice";
 import { useObservations } from "./hooks/useObservations";
 import { useEffect, useState } from "react";
 import NavBar from "./components/NavBar";
@@ -16,13 +17,38 @@ const Map = dynamic(() => import("./components/Map"), {
 });
 
 export default function Home() {
-  const {
+  /* const {
     recording,
     startRecording,
     stopRecording,
     audio,
     error: errorRecording,
-  } = useRecordVoice();
+  } = useRecordVoice(); */
+
+  const [errorRecording, setErrorRecording] = useState<
+    DOMException | undefined
+  >(undefined);
+
+  const audioTrackConstraints = undefined;
+  const onNotAllowedOrFound = (err: DOMException) => setErrorRecording(err);
+
+  const [mimeType, setMimeType] = useState("audio/webm");
+  const mediaRecorderOptions = { mimeType };
+
+  useEffect(() => {
+    setMimeType(resolveMimeType());
+  }, []);
+
+  const {
+    startRecording,
+    stopRecording,
+    recordingBlob: audio,
+    isRecording: recording,
+  } = useAudioRecorder(
+    audioTrackConstraints,
+    onNotAllowedOrFound,
+    mediaRecorderOptions,
+  );
 
   const { processAudio, status: processingStatus } = useProcessing({
     recording,
